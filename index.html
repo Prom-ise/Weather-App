@@ -12,15 +12,15 @@
     />
 </head>
 <body>
-  <main class="row ms-5 mt-5">
+  <main class="row lg-ms-5 mt-5">
     <div class="col-sm-12 col-md-6 col-lg-5 cardContainer">
         <div class="cards">
-          <p class="city"><div>
+          <p class="city">
+            <p class="text-light" id="locationDetect">THAILAND</p>
+            <div>
             <button class="button" onclick="getWeatherWithLocation()">Get Weather for My Location</button>
         </div>
-        <div id="weatherInfo">
-            <!-- Weather information will be displayed here -->
-        </div></p>
+      </p>
           <p class="weather" id="des">PARTILY CLOUDY</p>
           <svg
             class="weather"
@@ -61,7 +61,7 @@
         </div>
       </div>
       
-      <div class="locator mt-5 col-sm-10 col-md-5 col-lg-4">
+      <div class="container locator mt-5 col-md-5 col-lg-4">
         <div>
       <label class="label mt-5" for="location">Enter Location:</label>
       <br>

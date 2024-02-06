@@ -6,19 +6,21 @@ function getWeatherByLocation() {
         alert('Please enter a location.');
         return;
     }
-
+            
     const apiKey = '42d7323936c0710f4e4a782af3390eb4';
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
+            
             // Extract relevant weather information
             const temperature = data.main.temp;
             const humidity = data.main.humidity;
             const description = data.weather[0].description;
             const windSpeed = data.wind.speed;
-
+            
             // Update HTML content
+            locationDetect.innerHTML = data.name, data.sys.country
             temp.innerText = `${(data.main.temp).toFixed(1)}°C`
             des.innerHTML = data.weather[0].description
             winds.innerHTML = `${data.wind.speed} km/h`
@@ -73,4 +75,3 @@ function getWeatherByCoordinates(latitude, longitude) {
             console.error('Error fetching weather data:', error);
         });
 }
-
