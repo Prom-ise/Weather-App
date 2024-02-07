@@ -3,7 +3,7 @@ function getWeatherByLocation() {
     const location = locationInput.value.trim();
 
     if (!location) {
-        alert('Please enter a location.');
+        alert('Please enter a valid location.');
         return;
     }
             
