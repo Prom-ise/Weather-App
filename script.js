@@ -6,21 +6,22 @@ function getWeatherByLocation() {
         alert('Please enter a valid location.');
         return;
     }
-            
+
     const apiKey = '42d7323936c0710f4e4a782af3390eb4';
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
-            
+
             // Extract relevant weather information
             const temperature = data.main.temp;
             const humidity = data.main.humidity;
             const description = data.weather[0].description;
             const windSpeed = data.wind.speed;
-            
+            const countryName = data.sys.country;
+
             // Update HTML content
-            locationDetect.innerHTML = data.name, data.sys.country
+            locationDetect.innerHTML = data.sys.country
             temp.innerText = `${(data.main.temp).toFixed(1)}°C`
             des.innerHTML = data.weather[0].description
             winds.innerHTML = `${data.wind.speed} km/h`
@@ -64,9 +65,13 @@ function getWeatherByCoordinates(latitude, longitude) {
             const humidity = data.main.humidity;
             const description = data.weather[0].description;
             const windSpeed = data.wind.speed;
+            const cityName = data.name; // Assuming the city name is directly under 'name' property
+            const countryName = data.sys.country;
+
 
             // Update HTML content
-            temp.innerText = `${(data.main.temp).toFixed(1)}°C`
+            locationDetect.innerHTML = data.name, data.sys.country
+            temp.innerHTML = `${(data.main.temp).toFixed(1)}°C`
             des.innerHTML = data.weather[0].description
             winds.innerHTML = `${data.wind.speed} km/h`
             hum.innerHTML = `${data.main.humidity} %`
