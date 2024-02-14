@@ -256,4 +256,8 @@ body{
       position: relative;
       width: 50%;
     }
+    .cardContainer{
+      position: relative;
+      margin-right: 40%;
+    }
   }
