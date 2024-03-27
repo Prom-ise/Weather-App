@@ -56,7 +56,7 @@ function getWeatherWithLocation() {
 function getWeatherByCoordinates(latitude, longitude) {
     const apiKey = '42d7323936c0710f4e4a782af3390eb4';
 
-    // Make an API request to OpenWeatherMap using coordinates
+    // Making an API request to OpenWeatherMap using coordinates
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
